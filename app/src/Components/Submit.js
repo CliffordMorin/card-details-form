@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Submit = ({ info, setInfo, setConfirm }) => {
+  useEffect(() => {
+    localStorage.setItem("info", JSON.stringify(info));
+  }, [info]);
+
   const [cardNumberError, setCardNumberError] = useState({
     color: "",
     message: "",
@@ -53,13 +57,14 @@ const Submit = ({ info, setInfo, setConfirm }) => {
 
   const formSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.cardHolderName.value);
-    setInfo({
+    const input = {
       cardHolderName: e.target.cardHolderName.value,
       cardNumber: e.target.cardNumber.value,
       expiryDate: e.target.expiryMonth.value + "/" + e.target.expiryYear.value,
       cvv: e.target.cvv.value,
-    });
+    };
+    localStorage.setItem("info", JSON.stringify(input));
+    setInfo(input);
     setConfirm(true);
     console.log(info);
   };
@@ -69,7 +74,6 @@ const Submit = ({ info, setInfo, setConfirm }) => {
       <form onSubmit={formSubmit}>
         <label htmlFor="cardHolderName">CardHolder Name</label>
         <input type="text" name="cardHolderName" id="cardHolderName" required />
-
         <label htmlFor="cardNumber">Card Number</label>
         <input
           type="text"

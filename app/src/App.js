@@ -4,12 +4,14 @@ import Confirm from "./Components/Confirm";
 import Submit from "./Components/Submit";
 
 function App() {
-  const [info, setInfo] = useState({
-    cardHolderName: "",
-    cardNumber: "",
-    expiryDate: "",
-    cvv: "",
-  });
+  const [info, setInfo] = useState(
+    JSON.parse(localStorage.getItem("info")) || {
+      cardHolderName: "",
+      cardNumber: "",
+      expiryDate: "",
+      cvv: "",
+    }
+  );
 
   const [confirm, setConfirm] = useState(false);
 
