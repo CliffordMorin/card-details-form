@@ -53,6 +53,7 @@ const Submit = ({ info, setInfo, setConfirm }) => {
 
   const formSubmit = (e) => {
     e.preventDefault();
+    console.log(e.target.cardHolderName.value);
     setInfo({
       cardHolderName: e.target.cardHolderName.value,
       cardNumber: e.target.cardNumber.value,
@@ -65,7 +66,7 @@ const Submit = ({ info, setInfo, setConfirm }) => {
 
   return (
     <div>
-      <form action="">
+      <form onSubmit={formSubmit}>
         <label htmlFor="cardHolderName">CardHolder Name</label>
         <input type="text" name="cardHolderName" id="cardHolderName" required />
 
@@ -99,7 +100,6 @@ const Submit = ({ info, setInfo, setConfirm }) => {
           placeholder="MM"
           required
         />
-
         <input
           type="text"
           name="expiryYear"
@@ -118,9 +118,7 @@ const Submit = ({ info, setInfo, setConfirm }) => {
           required
         />
 
-        <button type="submit" onSubmit={formSubmit}>
-          Confirm
-        </button>
+        <button type="submit">Confirm</button>
       </form>
     </div>
   );
