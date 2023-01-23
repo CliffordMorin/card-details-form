@@ -140,8 +140,6 @@ const Submit = ({ info, setInfo, setConfirm }) => {
 };
 
 const StyledSubmit = styled("div")`
-  background-color: #f5f5f5;
-
   input {
     width: 100%;
     padding: 12px 20px;

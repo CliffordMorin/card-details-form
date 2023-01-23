@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import "./App.css";
 import Confirm from "./Components/Confirm";
 import Submit from "./Components/Submit";
 
 function App() {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
   const [info, setInfo] = useState(
     JSON.parse(localStorage.getItem("info")) || {
       cardHolderName: "",
@@ -16,8 +18,19 @@ function App() {
 
   const [confirm, setConfirm] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <StyledApp className="App">
+      {screenWidth < 768 ? (
+        <div className="bg-mobile"></div>
+      ) : (
+        <div className="bg-desktop"></div>
+      )}
       {confirm ? (
         <Confirm info={info} setConfirm={setConfirm} />
       ) : (
@@ -37,7 +50,32 @@ const StyledApp = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f5f5f5;
+
+  .bg-mobile {
+    background-image: url("./images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+  }
+
+  .bg-desktop {
+    background-image: url("./images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+  }
 `;
 
 export default App;
