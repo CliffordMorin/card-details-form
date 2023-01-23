@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
 
 const Submit = ({ info, setInfo, setConfirm }) => {
   useEffect(() => {
@@ -69,15 +70,23 @@ const Submit = ({ info, setInfo, setConfirm }) => {
   };
 
   return (
-    <div>
+    <StyledSubmit>
       <form onSubmit={formSubmit}>
-        <label htmlFor="cardHolderName">CardHolder Name</label>
-        <input type="text" name="cardHolderName" id="cardHolderName" required />
-        <label htmlFor="cardNumber">Card Number</label>
+        <label htmlFor="cardHolderName">CARDHOLDER NAME</label>
+        <input
+          type="text"
+          name="cardHolderName"
+          id="cardHolderName"
+          minLength="3"
+          placeholder="e.g. Jane Appleseed"
+          required
+        />
+        <label htmlFor="cardNumber">CARD NUMBER</label>
         <input
           type="text"
           name="cardNumber"
           id="cardNumber"
+          placeholder="e.g 1234 5678 9012 3456"
           style={{ borderColor: cardNumberError.color }}
           onChange={(e) => {
             testCardNumber(e);
@@ -94,12 +103,13 @@ const Submit = ({ info, setInfo, setConfirm }) => {
             {cardNumberError.message}
           </p>
         )}
-        <label htmlFor="expiryDate">Expiry Date (MM/YY)</label>
+        <label htmlFor="expiryDate">EXP. DATE (MM/YY)</label>
         <input
           type="text"
           name="expiryMonth"
           id="expiryMonth"
           maxLength="2"
+          minLength="2"
           placeholder="MM"
           required
         />
@@ -108,6 +118,7 @@ const Submit = ({ info, setInfo, setConfirm }) => {
           name="expiryYear"
           id="expiryYear"
           maxLength="2"
+          minLength="2"
           placeholder="YY"
           required
         />
@@ -117,14 +128,38 @@ const Submit = ({ info, setInfo, setConfirm }) => {
           name="cvv"
           id="cvv"
           maxLength="3"
+          minLength="3"
           placeholder="e.g. 123"
           required
         />
 
         <button type="submit">Confirm</button>
       </form>
-    </div>
+    </StyledSubmit>
   );
 };
+
+const StyledSubmit = styled("div")`
+  background-color: #f5f5f5;
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  input:invalid {
+    border: 1px solid hsl(0, 100%, 66%);
+  }
+
+  input:focus {
+    border: 1px solid hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  }
+  input:valid {
+    border: 1px solid green;
+  }
+`;
 
 export default Submit;
