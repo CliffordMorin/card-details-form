@@ -66,7 +66,6 @@ const Submit = ({ info, setInfo, setConfirm }) => {
     localStorage.setItem("info", JSON.stringify(input));
     setInfo(input);
     setConfirm(true);
-    console.log(info);
   };
 
   return (
