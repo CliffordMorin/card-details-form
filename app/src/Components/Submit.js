@@ -139,26 +139,38 @@ const Submit = ({ info, setInfo, setConfirm }) => {
   );
 };
 
-const StyledSubmit = styled("div")`
-  display: grid;
-  grid-template-row: 1fr 1fr 3fr;
-  grid-template-columns: 1fr 300px;
-`;
+const StyledSubmit = styled("div")``;
 
 const StyledForm = styled("form")`
-  grid-column: 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 25% 25% 50%;
 
-  #cardHolderName,
-  #cardNumber {
+  #cardHolderName {
+    background-color: red;
     grid-row: 1 / 2;
+    grid-column: 1 / 4;
   }
 
-  #expiryMonth,
-  #expiryYear,
-  #cvv {
+  #cardNumber {
     grid-row: 2 / 3;
+    grid-column: 1 / 4;
+  }
+
+  #expiryMonth {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+  }
+  #expiryYear {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+  #cvv {
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
   }
   input {
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -178,6 +190,8 @@ const StyledForm = styled("form")`
 `;
 
 const StyledSubmitButton = styled("button")`
+  grid-row: 4 / 5;
+  grid-column: 1 / 4;
   background-color: #210a2f;
   border: none;
   color: white;
