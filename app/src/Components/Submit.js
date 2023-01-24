@@ -71,7 +71,7 @@ const Submit = ({ info, setInfo, setConfirm }) => {
 
   return (
     <StyledSubmit>
-      <form onSubmit={formSubmit}>
+      <StyledForm onSubmit={formSubmit}>
         <label htmlFor="cardHolderName">CARDHOLDER NAME</label>
         <input
           type="text"
@@ -134,14 +134,31 @@ const Submit = ({ info, setInfo, setConfirm }) => {
         />
 
         <StyledSubmitButton type="submit">Confirm</StyledSubmitButton>
-      </form>
+      </StyledForm>
     </StyledSubmit>
   );
 };
 
 const StyledSubmit = styled("div")`
+  display: grid;
+  grid-template-row: 1fr 1fr 3fr;
+  grid-template-columns: 1fr 300px;
+`;
+
+const StyledForm = styled("form")`
+  grid-column: 2;
+
+  #cardHolderName,
+  #cardNumber {
+    grid-row: 1 / 2;
+  }
+
+  #expiryMonth,
+  #expiryYear,
+  #cvv {
+    grid-row: 2 / 3;
+  }
   input {
-    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
