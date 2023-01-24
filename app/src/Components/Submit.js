@@ -133,7 +133,7 @@ const Submit = ({ info, setInfo, setConfirm }) => {
           required
         />
 
-        <button type="submit">Confirm</button>
+        <StyledSubmitButton type="submit">Confirm</StyledSubmitButton>
       </form>
     </StyledSubmit>
   );
@@ -158,6 +158,20 @@ const StyledSubmit = styled("div")`
   input:valid {
     border: 1px solid green;
   }
+`;
+
+const StyledSubmitButton = styled("button")`
+  background-color: #210a2f;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
 `;
 
 export default Submit;

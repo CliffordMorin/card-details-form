@@ -69,7 +69,7 @@ const StyledApp = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
