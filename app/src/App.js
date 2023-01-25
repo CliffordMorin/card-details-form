@@ -26,6 +26,11 @@ function App() {
 
   return (
     <StyledApp className="App">
+      <img
+        src="./images/bg-card-front.png"
+        alt="credit card"
+        className="creditCardFront"
+      />
       {screenWidth < 768 ? (
         <div className="bg-mobile"></div>
       ) : (
@@ -45,10 +50,6 @@ const StyledApp = styled.div`
   font-family: "Space Grotesk";
   font-weight: 500;
   font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
 
   .bg-mobile {
