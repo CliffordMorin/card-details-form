@@ -72,66 +72,76 @@ const Submit = ({ info, setInfo, setConfirm }) => {
   return (
     <StyledSubmit>
       <StyledForm onSubmit={formSubmit}>
-        <label htmlFor="cardHolderName">CARDHOLDER NAME</label>
-        <input
-          type="text"
-          name="cardHolderName"
-          id="cardHolderName"
-          minLength="3"
-          placeholder="e.g. Jane Appleseed"
-          required
-        />
-        <label htmlFor="cardNumber">CARD NUMBER</label>
-        <input
-          type="text"
-          name="cardNumber"
-          id="cardNumber"
-          placeholder="e.g 1234 5678 9012 3456"
-          style={{ borderColor: cardNumberError.color }}
-          onChange={(e) => {
-            testCardNumber(e);
-          }}
-          maxLength="16"
-          required
-        />
-        {cardNumberError.message && (
-          <p
-            style={{
-              color: cardNumberError.color,
+        <div className="cardHolderName">
+          <label htmlFor="cardHolderName">CARDHOLDER NAME</label>
+          <input
+            type="text"
+            name="cardHolderName"
+            id="cardHolderName"
+            minLength="3"
+            placeholder="e.g. Jane Appleseed"
+            required
+          />
+        </div>
+        <div className="cardNumber">
+          <label htmlFor="cardNumber">CARD NUMBER</label>
+          <input
+            type="text"
+            name="cardNumber"
+            id="cardNumber"
+            placeholder="e.g 1234 5678 9012 3456"
+            style={{ borderColor: cardNumberError.color }}
+            onChange={(e) => {
+              testCardNumber(e);
             }}
-          >
-            {cardNumberError.message}
-          </p>
-        )}
-        <label htmlFor="expiryDate">EXP. DATE (MM/YY)</label>
-        <input
-          type="text"
-          name="expiryMonth"
-          id="expiryMonth"
-          maxLength="2"
-          minLength="2"
-          placeholder="MM"
-          required
-        />
-        <input
-          type="text"
-          name="expiryYear"
-          id="expiryYear"
-          maxLength="2"
-          minLength="2"
-          placeholder="YY"
-          required
-        />
-        <label htmlFor="cvv">CVV</label>
-        <input
-          type="text"
-          name="cvv"
-          id="cvv"
-          maxLength="3"
-          minLength="3"
-          placeholder="e.g. 123"
-          required
-        />
+            maxLength="16"
+            required
+          />
+          {cardNumberError.message && (
+            <p
+              style={{
+                color: cardNumberError.color,
+              }}
+            >
+              {cardNumberError.message}
+            </p>
+          )}
+        </div>
+        <div className="expiryMonth">
+          <label htmlFor="expiryDate">EXP. DATE (MM/YY)</label>
+          <input
+            type="text"
+            name="expiryMonth"
+            id="expiryMonth"
+            maxLength="2"
+            minLength="2"
+            placeholder="MM"
+            required
+          />
+        </div>
+        <div className="expiryYear">
+          <input
+            type="text"
+            name="expiryYear"
+            id="expiryYear"
+            maxLength="2"
+            minLength="2"
+            placeholder="YY"
+            required
+          />
+        </div>
+        <div className="cvv">
+          <label htmlFor="cvv">CVV</label>
+          <input
+            type="text"
+            name="cvv"
+            id="cvv"
+            maxLength="3"
+            minLength="3"
+            placeholder="e.g. 123"
+            required
+          />
+        </div>
 
         <StyledSubmitButton type="submit">Confirm</StyledSubmitButton>
       </StyledForm>
@@ -145,29 +155,31 @@ const StyledForm = styled("form")`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 25% 25% 50%;
-
-  #cardHolderName {
+  .cardHolderName {
     background-color: red;
     grid-row: 1 / 2;
     grid-column: 1 / 4;
   }
 
-  #cardNumber {
+  .cardNumber {
     grid-row: 2 / 3;
     grid-column: 1 / 4;
   }
 
-  #expiryMonth {
+  .expiryMonth {
     grid-row: 3 / 4;
     grid-column: 2 / 3;
   }
-  #expiryYear {
+  .expiryYear {
     grid-row: 3 / 4;
     grid-column: 1 / 2;
   }
-  #cvv {
+  .cvv {
     grid-row: 3 / 4;
     grid-column: 3 / 4;
+  }
+  label {
+    display: inline-block;
   }
   input {
     width: 100%;
