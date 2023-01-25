@@ -108,7 +108,7 @@ const Submit = ({ info, setInfo, setConfirm }) => {
           )}
         </div>
         <div className="expiryMonth">
-          <label htmlFor="expiryDate">EXP. DATE (MM/YY)</label>
+          <label htmlFor="expiryMonth">EXPIRY DATE</label>
           <input
             type="text"
             name="expiryMonth"
@@ -120,6 +120,7 @@ const Submit = ({ info, setInfo, setConfirm }) => {
           />
         </div>
         <div className="expiryYear">
+          <label htmlFor="expiryYear">(MM/YY)</label>
           <input
             type="text"
             name="expiryYear"
@@ -155,8 +156,9 @@ const StyledForm = styled("form")`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 25% 25% 50%;
+  grid-gap: 20px 10px;
+
   .cardHolderName {
-    background-color: red;
     grid-row: 1 / 2;
     grid-column: 1 / 4;
   }
@@ -168,18 +170,19 @@ const StyledForm = styled("form")`
 
   .expiryMonth {
     grid-row: 3 / 4;
-    grid-column: 2 / 3;
+    grid-column: 1 / 2;
   }
   .expiryYear {
     grid-row: 3 / 4;
-    grid-column: 1 / 2;
+    grid-column: 2 / 3;
+    margin-right: 10px;
   }
   .cvv {
     grid-row: 3 / 4;
     grid-column: 3 / 4;
   }
   label {
-    display: inline-block;
+    float: left;
   }
   input {
     width: 100%;
@@ -212,7 +215,7 @@ const StyledSubmitButton = styled("button")`
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 10px 2px;
   cursor: pointer;
   border-radius: 4px;
 `;
