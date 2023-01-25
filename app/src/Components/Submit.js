@@ -150,7 +150,10 @@ const Submit = ({ info, setInfo, setConfirm }) => {
   );
 };
 
-const StyledSubmit = styled("div")``;
+const StyledSubmit = styled("div")`
+  display: flex;
+  justify-content: flex-end;
+`;
 
 const StyledForm = styled("form")`
   display: grid;
