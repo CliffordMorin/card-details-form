@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import "./App.css";
 import Confirm from "./Components/Confirm";
 import Submit from "./Components/Submit";
 
@@ -27,7 +26,7 @@ function App() {
   return (
     <StyledApp className="App">
       <img
-        src="./images/bg-card-front.png"
+        src={`${process.env.PUBLIC_URL}/images/bg-card-front.png`}
         alt="credit card"
         className="creditCardFront"
       />
@@ -52,8 +51,17 @@ const StyledApp = styled.div`
   font-size: 18px;
   height: 100vh;
 
+  .creditCardFront {
+    position: absolute;
+
+    width: 30%;
+    height: 30vh;
+    z-index: 2;
+  }
+
   .bg-mobile {
-    background-image: url("./images/bg-main-mobile.png");
+    background-image: url("${process.env
+      .PUBLIC_URL}/images/bg-main-mobile.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -61,19 +69,20 @@ const StyledApp = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 20vh;
     z-index: -1;
   }
 
   .bg-desktop {
-    background-image: url("./images/bg-main-desktop.png");
+    background-image: url("${process.env
+      .PUBLIC_URL}/images/bg-main-desktop.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 30%;
     height: 100vh;
     z-index: 1;
   }
