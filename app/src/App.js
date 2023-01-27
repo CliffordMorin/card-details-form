@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import Confirm from "./Components/Confirm";
 import Submit from "./Components/Submit";
+import Confirm from "./Components/Confirm";
 
 function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -67,6 +67,8 @@ const StyledApp = styled.div`
     height: 32vh;
     z-index: 0;
     top: 20vh;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
   }
 
   .creditCardBack {
@@ -74,6 +76,9 @@ const StyledApp = styled.div`
     width: 30%;
     height: 32vh;
     z-index: 2;
+    transform: translate(50%, 180%);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
   }
 
   .bg-mobile {
