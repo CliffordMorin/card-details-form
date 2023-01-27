@@ -224,7 +224,7 @@ const StyledSubmitButton = styled("button")`
   font-size: 16px;
   margin: 10px 2px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 7px;
 `;
 
 export default Submit;
