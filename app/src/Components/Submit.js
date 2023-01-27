@@ -154,10 +154,10 @@ const StyledSubmit = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 50%;
   width: 30%;
   height: 100%;
   margin: 0 auto;
+  transform: translate(50%, 5%);
 `;
 
 const StyledForm = styled("form")`
