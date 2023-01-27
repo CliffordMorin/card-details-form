@@ -154,6 +154,7 @@ const StyledSubmit = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 50%;
   width: 30%;
   height: 100%;
   margin: 0 auto;
@@ -164,6 +165,7 @@ const StyledForm = styled("form")`
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: 25% 25% 50%;
   grid-gap: 20px 10px;
+  z-index: 2;
 
   .cardHolderName {
     grid-row: 1 / 2;
@@ -224,7 +226,7 @@ const StyledSubmitButton = styled("button")`
   font-size: 16px;
   margin: 10px 2px;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 8px;
 `;
 
 export default Submit;

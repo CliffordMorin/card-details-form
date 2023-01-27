@@ -25,11 +25,21 @@ function App() {
 
   return (
     <StyledApp className="App">
-      <img
-        src={`${process.env.PUBLIC_URL}/images/bg-card-front.png`}
-        alt="credit card"
-        className="creditCardFront"
-      />
+      <CreditFrontContainer className="frontContainer">
+        <img
+          src={`${process.env.PUBLIC_URL}/images/bg-card-front.png`}
+          alt="credit card"
+          className="creditCardFront"
+        />
+      </CreditFrontContainer>
+      <CreditBackContainer>
+        <img
+          src={`${process.env.PUBLIC_URL}/images/bg-card-back.png`}
+          alt="credit card"
+          className="creditCardBack"
+        />
+      </CreditBackContainer>
+
       {screenWidth < 768 ? (
         <div className="bg-mobile"></div>
       ) : (
@@ -53,9 +63,16 @@ const StyledApp = styled.div`
 
   .creditCardFront {
     position: absolute;
-
     width: 30%;
-    height: 30vh;
+    height: 32vh;
+    z-index: 0;
+    top: 20vh;
+  }
+
+  .creditCardBack {
+    position: absolute;
+    width: 30%;
+    height: 32vh;
     z-index: 2;
   }
 
@@ -87,5 +104,11 @@ const StyledApp = styled.div`
     z-index: -1;
   }
 `;
+
+const CreditFrontContainer = styled.div`
+  margin-left: 10%;
+`;
+
+const CreditBackContainer = styled.div``;
 
 export default App;
