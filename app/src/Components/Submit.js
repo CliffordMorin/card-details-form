@@ -108,7 +108,7 @@ const Submit = ({ info, setInfo, setConfirm }) => {
           )}
         </div>
         <div className="expiryMonth">
-          <label htmlFor="expiryMonth">EXPIRY DATE</label>
+          <label htmlFor="expiryMonth">EXP. DATE</label>
           <input
             type="text"
             name="expiryMonth"
@@ -152,12 +152,16 @@ const Submit = ({ info, setInfo, setConfirm }) => {
 
 const StyledSubmit = styled("div")`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  margin: 0 auto;
 `;
 
 const StyledForm = styled("form")`
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
   grid-template-columns: 25% 25% 50%;
   grid-gap: 20px 10px;
 
@@ -193,7 +197,7 @@ const StyledForm = styled("form")`
     margin: 8px 0;
     box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
   }
   input:invalid {
     border: 1px solid hsl(0, 100%, 66%);

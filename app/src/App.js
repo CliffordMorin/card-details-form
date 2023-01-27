@@ -79,12 +79,12 @@ const StyledApp = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 30%;
     height: 100vh;
-    z-index: 1;
+    z-index: -1;
   }
 `;
 
