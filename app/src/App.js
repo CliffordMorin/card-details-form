@@ -8,14 +8,18 @@ function App() {
 
   const [info, setInfo] = useState(
     JSON.parse(localStorage.getItem("info")) || {
-      cardHolderName: "",
-      cardNumber: "",
-      expiryDate: "",
-      cvv: "",
+      cardHolderName: "Jane Appleseed",
+      cardNumber: "0000000000000000",
+      expiryDate: "00/00",
+      cvv: "000",
     }
   );
 
   const [confirm, setConfirm] = useState(false);
+
+  const formatedCardNumber = (cardNumber) => {
+    return cardNumber.replace(/\d{4}(?=\d{4})/g, "$& ");
+  };
 
   useEffect(() => {
     const handleResize = () => setScreenWidth(window.innerWidth);
@@ -31,6 +35,10 @@ function App() {
           alt="credit card"
           className="creditCardFront"
         />
+        <svg></svg>
+        <StyledCardNumber>
+          {formatedCardNumber(info.cardNumber)}
+        </StyledCardNumber>
       </CreditFrontContainer>
       <CreditBackContainer>
         <img
@@ -124,8 +132,38 @@ const StyledApp = styled.div`
   }
 `;
 
-const CreditFrontContainer = styled.div``;
+const CreditFrontContainer = styled.div`
+  svg {
+    position: absolute;
+    background-image: url("${process.env.PUBLIC_URL}/images/card-logo.svg");
+    background-repeat: no-repeat;
+    top: 18vh;
+    left: 11%;
+    width: 20%;
+    height: 20%;
+    z-index: 5;
+    @media (max-width: 768px) {
+      top: 20vh;
+      left: 8%;
+    }
+  }
+`;
 
 const CreditBackContainer = styled.div``;
+
+const StyledCardNumber = styled.h2`
+  position: absolute;
+  color: #fff;
+  top: 30vh;
+  left: 12%;
+  width: 50%;
+  height: 20%;
+  z-index: 1;
+  font-size: 2rem;
+  @media (max-width: 768px) {
+    top: 27vh;
+    left: 8%;
+  }
+`;
 
 export default App;
