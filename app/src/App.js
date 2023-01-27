@@ -66,9 +66,17 @@ const StyledApp = styled.div`
     width: 30%;
     height: 32vh;
     z-index: 0;
-    top: 20vh;
+    top: 15vh;
+    transform: translate(30%, 0);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     border-radius: 8px;
+
+    @media (max-width: 768px) {
+      width: 75%;
+      height: 20vh;
+      transform: translate(5%, 15%);
+      z-index: 2;
+    }
   }
 
   .creditCardBack {
@@ -76,9 +84,15 @@ const StyledApp = styled.div`
     width: 30%;
     height: 32vh;
     z-index: 2;
-    transform: translate(50%, 180%);
+    transform: translate(50%, 170%);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     border-radius: 8px;
+    @media (max-width: 768px) {
+      width: 75%;
+      height: 20vh;
+      transform: translate(25%, 30%);
+      z-index: 1;
+    }
   }
 
   .bg-mobile {
@@ -91,7 +105,7 @@ const StyledApp = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 20vh;
+    height: 30vh;
     z-index: -1;
   }
 
@@ -110,9 +124,7 @@ const StyledApp = styled.div`
   }
 `;
 
-const CreditFrontContainer = styled.div`
-  margin-left: 10%;
-`;
+const CreditFrontContainer = styled.div``;
 
 const CreditBackContainer = styled.div``;
 

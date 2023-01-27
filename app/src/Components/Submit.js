@@ -157,7 +157,14 @@ const StyledSubmit = styled("div")`
   width: 30%;
   height: 100%;
   margin: 0 auto;
-  transform: translate(50%, 5%);
+  transform: translateX(50%);
+
+  @media (max-width: 768px) {
+    width: 80%;
+    transform: translateX(0);
+    align-items: flex-end;
+    transform: translateY(-5%);
+  }
 `;
 
 const StyledForm = styled("form")`
