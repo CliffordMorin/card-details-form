@@ -15,9 +15,16 @@ function App() {
     }
   );
 
+  const [tempInfo, setTempInfo] = useState({
+    cardHolderName: "Jane Appleseed",
+    cardNumber: "0000000000000000",
+    expiryDate: "00/00",
+    cvv: "000",
+  });
+
   const [confirm, setConfirm] = useState(false);
 
-  const formatedCardNumber = (cardNumber) => {
+  const formatCardNumber = (cardNumber) => {
     return cardNumber.replace(/\d{4}(?=\d{4})/g, "$& ");
   };
 
@@ -37,7 +44,7 @@ function App() {
         />
         <svg></svg>
         <StyledCardNumber>
-          {formatedCardNumber(info.cardNumber)}
+          {formatCardNumber(tempInfo.cardNumber)}
         </StyledCardNumber>
       </CreditFrontContainer>
       <CreditBackContainer>
