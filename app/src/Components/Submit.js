@@ -165,7 +165,7 @@ const StyledSubmit = styled("div")`
     width: 80%;
     transform: translateX(0);
     align-items: flex-end;
-    transform: translateY(-5%);
+    transform: translateY(-12%);
   }
 `;
 
