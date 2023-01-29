@@ -101,6 +101,8 @@ const Submit = ({ info, setInfo, setConfirm }) => {
             <p
               style={{
                 color: cardNumberError.color,
+                margin: "0",
+                position: "absolute",
               }}
             >
               {cardNumberError.message}
