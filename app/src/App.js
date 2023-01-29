@@ -15,13 +15,6 @@ function App() {
     }
   );
 
-  const [tempInfo, setTempInfo] = useState({
-    cardHolderName: "Jane Appleseed",
-    cardNumber: "0000000000000000",
-    expiryDate: "00/00",
-    cvv: "000",
-  });
-
   const [confirm, setConfirm] = useState(false);
 
   const formatCardNumber = (cardNumber) => {
@@ -43,9 +36,7 @@ function App() {
           className="creditCardFront"
         />
         <svg></svg>
-        <StyledCardNumber>
-          {formatCardNumber(tempInfo.cardNumber)}
-        </StyledCardNumber>
+        <StyledCardNumber>{formatCardNumber(info.cardNumber)}</StyledCardNumber>
       </CreditFrontContainer>
       <CreditBackContainer>
         <img
@@ -76,6 +67,10 @@ const StyledApp = styled.div`
   font-size: 18px;
   height: 100vh;
 
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
   .creditCardFront {
     position: absolute;
     width: 30%;
@@ -89,7 +84,7 @@ const StyledApp = styled.div`
     @media (max-width: 768px) {
       width: 75%;
       height: 20vh;
-      transform: translate(5%, 15%);
+      transform: translate(10%, 15%);
       z-index: 2;
     }
   }
@@ -151,7 +146,7 @@ const CreditFrontContainer = styled.div`
     z-index: 5;
     @media (max-width: 768px) {
       top: 20vh;
-      left: 8%;
+      left: 10%;
     }
   }
 `;
