@@ -24,8 +24,9 @@ function App() {
   useEffect(() => {
     const handleResize = () => setScreenWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
+    console.log(info.cardNumber);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [info.cardNumber]);
 
   return (
     <StyledApp className="App">
@@ -37,6 +38,8 @@ function App() {
         />
         <svg></svg>
         <StyledCardNumber>{formatCardNumber(info.cardNumber)}</StyledCardNumber>
+        <StyledName>{info.cardHolderName}</StyledName>
+        <StyledExpiryDate>{info.expiryDate}</StyledExpiryDate>
       </CreditFrontContainer>
       <CreditBackContainer>
         <img
@@ -159,12 +162,46 @@ const StyledCardNumber = styled.h2`
   top: 30vh;
   left: 12%;
   width: 50%;
-  height: 20%;
-  z-index: 1;
+  height: 5%;
+  margin: 0;
+  z-index: 5;
   font-size: 2rem;
   @media (max-width: 768px) {
-    top: 27vh;
-    left: 8%;
+    transform: translate(1%, -15%);
+    width: 80%;
+    font-size: 1.8rem;
+  }
+`;
+
+const StyledName = styled.h2`
+  position: absolute;
+  color: #fff;
+  top: 32vh;
+  width: 50%;
+  height: 5%;
+  margin: 0;
+  z-index: 5;
+  font-size: 1.5rem;
+  @media (max-width: 768px) {
+    transform: translate(15%, 40%);
+    width: 80%;
+    font-size: 1.2rem;
+  }
+`;
+
+const StyledExpiryDate = styled.h2`
+  position: absolute;
+  color: #fff;
+  top: 32vh;
+  width: 50%;
+  height: 5%;
+  margin: 0;
+  z-index: 5;
+  font-size: 1.5rem;
+  @media (max-width: 768px) {
+    transform: translate(80%, 40%);
+    width: 80%;
+    font-size: 1.2rem;
   }
 `;
 
