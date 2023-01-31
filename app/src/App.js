@@ -38,7 +38,7 @@ function App() {
         />
         <svg></svg>
         <StyledCardNumber>{formatCardNumber(info.cardNumber)}</StyledCardNumber>
-        <StyledName>{info.cardHolderName}</StyledName>
+        <StyledName>{info.cardHolderName.toUpperCase()}</StyledName>
         <StyledExpiryDate>{info.expiryDate}</StyledExpiryDate>
       </CreditFrontContainer>
       <CreditBackContainer>
@@ -156,17 +156,16 @@ const CreditFrontContainer = styled.div`
 
 const CreditBackContainer = styled.div``;
 
-const StyledCardNumber = styled.h2`
+const StyledCardNumber = styled.p`
   position: absolute;
   color: #fff;
-
   top: 30vh;
   left: 12%;
   width: 50%;
   height: 5%;
   margin: 0;
   z-index: 5;
-  font-size: 2rem;
+  font-size: 2.5rem;
   @media (max-width: 768px) {
     transform: translate(1%, -15%);
     width: 80%;
@@ -174,12 +173,12 @@ const StyledCardNumber = styled.h2`
   }
 `;
 
-const StyledName = styled.h2`
+const StyledName = styled.p`
   position: absolute;
   color: #fff;
   top: 32vh;
   left: 12%;
-  transform: translate(0%, 50px);
+  transform: translate(0%, 65px);
   width: 50%;
   height: 5%;
   margin: 0;
@@ -192,11 +191,11 @@ const StyledName = styled.h2`
   }
 `;
 
-const StyledExpiryDate = styled.h2`
+const StyledExpiryDate = styled.p`
   position: absolute;
   color: #fff;
   top: 32vh;
-  transform: translate(65%, 70px);
+  transform: translate(68%, 65px);
   width: 50%;
   height: 5%;
   margin: 0;
