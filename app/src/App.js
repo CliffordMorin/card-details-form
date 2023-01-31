@@ -47,6 +47,7 @@ function App() {
           alt="credit card"
           className="creditCardBack"
         />
+        <StyledCvv>{info.cvv}</StyledCvv>
       </CreditBackContainer>
 
       {screenWidth < 768 ? (
@@ -155,6 +156,23 @@ const CreditFrontContainer = styled.div`
 `;
 
 const CreditBackContainer = styled.div``;
+
+const StyledCvv = styled.p`
+  position: absolute;
+  color: #fff;
+  top: 60vh;
+  transform: translate(79%, 60px);
+  width: 50%;
+  height: 5%;
+  margin: 0;
+  z-index: 5;
+  font-size: 1.2rem;
+  @media (max-width: 768px) {
+    transform: translate(80%, 40%);
+    width: 80%;
+    font-size: 1.2rem;
+  }
+`;
 
 const StyledCardNumber = styled.p`
   position: absolute;
