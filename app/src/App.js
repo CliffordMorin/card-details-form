@@ -64,7 +64,7 @@ function App() {
 }
 
 const StyledApp = styled.div`
-  @import url("https://fonts.google.com/specimen/Space+Grotesk");
+  @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
   font-family: "Space Grotesk";
   font-weight: 500;
   font-size: 18px;
@@ -159,6 +159,7 @@ const CreditBackContainer = styled.div``;
 const StyledCardNumber = styled.h2`
   position: absolute;
   color: #fff;
+
   top: 30vh;
   left: 12%;
   width: 50%;
@@ -177,11 +178,13 @@ const StyledName = styled.h2`
   position: absolute;
   color: #fff;
   top: 32vh;
+  left: 12%;
+  transform: translate(0%, 50px);
   width: 50%;
   height: 5%;
   margin: 0;
   z-index: 5;
-  font-size: 1.5rem;
+  font-size: 1rem;
   @media (max-width: 768px) {
     transform: translate(15%, 40%);
     width: 80%;
@@ -193,11 +196,12 @@ const StyledExpiryDate = styled.h2`
   position: absolute;
   color: #fff;
   top: 32vh;
+  transform: translate(65%, 70px);
   width: 50%;
   height: 5%;
   margin: 0;
   z-index: 5;
-  font-size: 1.5rem;
+  font-size: 1rem;
   @media (max-width: 768px) {
     transform: translate(80%, 40%);
     width: 80%;
