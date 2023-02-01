@@ -168,8 +168,9 @@ const StyledCvv = styled.p`
   z-index: 5;
   font-size: 1.2rem;
   @media (max-width: 768px) {
-    transform: translate(98%, 95%);
-    width: 80%;
+    transform: translate(80%, 95%);
+    left: 70%;
+    width: 10%;
     top: 10vh;
     font-size: 1rem;
   }
@@ -222,8 +223,9 @@ const StyledExpiryDate = styled.p`
   font-size: 1rem;
   @media (max-width: 768px) {
     transform: translate(85%, 40%);
-    width: 80%;
+    width: 10%;
     font-size: 0.8rem;
+    left: 60%;
   }
 `;
 
