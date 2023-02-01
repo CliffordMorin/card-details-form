@@ -177,7 +177,7 @@ const StyledCvv = styled.p`
 const StyledCardNumber = styled.p`
   position: absolute;
   color: #fff;
-  top: 30vh;
+  top: 29vh;
   left: 12%;
   width: 50%;
   height: 5%;
@@ -187,7 +187,7 @@ const StyledCardNumber = styled.p`
   @media (max-width: 768px) {
     transform: translate(1%, -15%);
     width: 80%;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 `;
 
@@ -203,9 +203,9 @@ const StyledName = styled.p`
   z-index: 5;
   font-size: 1rem;
   @media (max-width: 768px) {
-    transform: translate(15%, 40%);
+    transform: translate(0%, 40%);
     width: 80%;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
 `;
 
@@ -220,9 +220,9 @@ const StyledExpiryDate = styled.p`
   z-index: 5;
   font-size: 1rem;
   @media (max-width: 768px) {
-    transform: translate(80%, 40%);
+    transform: translate(85%, 40%);
     width: 80%;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
 `;
 
