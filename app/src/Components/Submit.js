@@ -11,6 +11,11 @@ const Submit = ({ info, setInfo, setConfirm }) => {
     message: "",
   });
 
+  // const [inputBlank, setInputBlank] = useState({
+  //   color: "",
+  //   message: "",
+  // });
+
   const checkCardNumber = (cardNumber) => {
     const cardNumberRegex = new RegExp("^[0-9]{16}$");
     return cardNumberRegex.test(cardNumber);
