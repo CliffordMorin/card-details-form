@@ -11,11 +11,6 @@ const Submit = ({ info, setInfo, setConfirm }) => {
     message: "",
   });
 
-  // const [inputBlank, setInputBlank] = useState({
-  //   color: "",
-  //   message: "",
-  // });
-
   const checkCardNumber = (cardNumber) => {
     const cardNumberRegex = new RegExp("^[0-9]{16}$");
     return cardNumberRegex.test(cardNumber);
@@ -163,9 +158,8 @@ const StyledSubmit = styled("div")`
 
   @media (max-width: 768px) {
     width: 80%;
-    transform: translateX(0);
+    transform: translate(0, -12%);
     align-items: flex-end;
-    transform: translateY(-12%);
   }
 `;
 
