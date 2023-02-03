@@ -21,6 +21,11 @@ const Submit = ({ info, setInfo, setConfirm }) => {
     return cardNumberRegex.test(cardNumber);
   };
 
+  // const isInputBlank = (input) => {
+  //   const inputRegex = new RegExp("^[a-zA-Z0-9]{1,}$");
+  //   return inputRegex.test(input);
+  // };
+
   // const submitIsInputBlank = (e) => {
   //   const input = e.target.value;
   //   if (!isInputBlank(input)) {
