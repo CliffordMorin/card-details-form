@@ -161,9 +161,10 @@ const StyledCvv = styled.p`
   position: absolute;
   color: #fff;
   top: 60vh;
+  left: 38vw;
   transform: translate(79%, 60px);
-  width: 50%;
-  height: 5%;
+  width: 2%;
+  height: 3%;
   margin: 0;
   z-index: 5;
   font-size: 1.2rem;
