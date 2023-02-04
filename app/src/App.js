@@ -181,7 +181,7 @@ const StyledCardNumber = styled.p`
   color: #fff;
   top: 29vh;
   left: 12%;
-  width: 50%;
+  width: 20%;
   height: 5%;
   margin: 0;
   z-index: 5;
@@ -199,7 +199,7 @@ const StyledName = styled.p`
   top: 32vh;
   left: 12%;
   transform: translate(0%, 65px);
-  width: 50%;
+  width: 20%;
   height: 5%;
   margin: 0;
   z-index: 5;
@@ -216,7 +216,7 @@ const StyledExpiryDate = styled.p`
   color: #fff;
   top: 32vh;
   transform: translate(68%, 65px);
-  width: 50%;
+  width: 20%;
   height: 5%;
   margin: 0;
   z-index: 5;
