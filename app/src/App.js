@@ -169,10 +169,10 @@ const StyledCvv = styled.p`
   z-index: 5;
   font-size: 1.2rem;
   @media (max-width: 768px) {
-    transform: translate(80%, 95%);
+    transform: translate(86%, 90%);
     left: 70%;
     width: 10%;
-    top: 10vh;
+    top: 12vh;
     font-size: 1rem;
   }
 `;
