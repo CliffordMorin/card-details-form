@@ -175,6 +175,10 @@ const StyledForm = styled("form")`
   grid-gap: 20px 10px;
   z-index: 2;
 
+  @media (max-width: 768px) {
+    grid-template-columns: 25% 25% 40%;
+  }
+
   .cardHolderName {
     grid-row: 1 / 2;
     grid-column: 1 / 4;
